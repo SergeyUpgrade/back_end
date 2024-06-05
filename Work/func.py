@@ -1,9 +1,10 @@
 def get_operations():
-    return
+    with open("operations.json", "r", encoding="utf-8") as file:
+        print(file.read())
 
 def format_data(srt_data: str):
     my_data = srt_data.split("T")[0].split("-")
     return ".".join(my_data[::-1])
 
 
-format_data("2019-07-03T18:35:29.512364")
+get_operations()
