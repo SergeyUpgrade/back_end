@@ -1,10 +1,9 @@
+import json
+
+
 def get_operations():
-    with open("operations.json", "w", encoding="utf-8") as file:
-        info = []
-        for item,key in file:
-            if item == "state" and key == "EXECUTED":
-                info.append(file)
-        return f"{info}"
+    with open("operations.json", encoding="utf-8") as file:
+        return json.load(file)
 
 
 def format_data(srt_data: str):
@@ -12,4 +11,4 @@ def format_data(srt_data: str):
     return ".".join(my_data[::-1])
 
 
-print(file = open("operations.json", "w", encoding="utf-8"))
+print(get_operations())
