@@ -18,4 +18,9 @@ def format_data(srt_data: str):
     return ".".join(my_data[::-1])
 
 
-print(get_last_5_executed(get_operations()))
+def stealth_account_number(account_number):
+    info = account_number.split()
+    return f"{info[0]} ****************{info[1][-4:]}"
+
+
+print(stealth_account_number("Счет 64686473678894779589"))
