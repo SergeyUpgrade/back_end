@@ -18,6 +18,16 @@ def main():
                 i["to"] = stealth_card_number(i["to"])
             print(f"{i["date"]} {i["description"]}")
             print(f"{i["from"]} -> {i["to"]}")
+            print(f"{i["operationAmount"]["amount"]} {i["operationAmount"]["currency"]["name"]}\n")
+        else:
+            if "Счет" in i["to"]:
+                i["to"] = stealth_account_number(i["to"])
+            else:
+                i["to"] = stealth_card_number(i["to"])
+            print(f"{i["date"]} {i["description"]}")
+            print(f"{i["to"]}")
+            print(f"{i["operationAmount"]["amount"]} {i["operationAmount"]["currency"]["name"]}\n")
+
 
 if __name__ == "__main__":
     main()
