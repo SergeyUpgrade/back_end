@@ -13,7 +13,7 @@ def test_get_last_5_executed():
                                                                                                                 {"id": 147815167,"state": "EXECUTED","date": "2018-01-26T15:40:13.413061"},]
 
 def test_format_data():
-    assert format_data({"date": "2018-06-30T02:08:58.425572"}) == {"date": "30.06.2018"}
+    assert format_data([{"date": "2019-08-26T10:50:58.294041"}, {"date": "2019-07-03T18:35:29.512364"}]) == [{"date": "26.08.2019"}, {"date": "03.07.2019"}]
 
 def test_stealth_account_number():
     assert stealth_account_number("Счет 78808375133947439319") == "Счет **9319"
