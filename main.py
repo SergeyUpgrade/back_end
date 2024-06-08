@@ -2,10 +2,15 @@ from Work.func import get_operations, get_last_5_executed, format_data, stealth_
 
 
 def main():
-    info = get_operations()
-    info_1 = get_last_5_executed(info)
-    info_2 = format_data(info_1)
-    for i in info_2:
+    """
+    Загружаем файл из json и выводим 5 последних выполненных операций с отформатированным временем,
+    форматруем значения ключей "from" и "to" через функции stealth_account_number, stealth_card_number и принтуем результат
+    :return:
+    """
+    get_operations_ = get_operations()
+    get_last_5_executed_ = get_last_5_executed(get_operations_)
+    formatted_last_5_operations = format_data(get_last_5_executed_)
+    for i in formatted_last_5_operations:
         if "from" in i:
             get_from = i["from"]
             if "Счет" in get_from:
